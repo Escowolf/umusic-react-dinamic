@@ -1,0 +1,12 @@
+header{
+    background-color: #E57147;
+    background: solid;
+    height:60px;
+}
+Link{
+    color:white!important;
+}
+.navItem{
+    text-decoration: none;
+    color:white;
+}
