@@ -1,17 +1,71 @@
+.allAlbuns{
+  padding-top:3%;
+  position: relative;
+  height: 100vh;
+}
 .flex-container {
+    padding-top:3%;
     display: flex;
     flex-wrap: wrap;
-    background-color: rgb(216, 228, 240);
+    width: 70%;
+    margin:auto;
   }
-  
-  .flex-container > div {
-    background-color: #ea5757;
-    width: 100px;
-    margin: 10px;
+
+  .flex-container > li{
     text-align: center;
-    line-height: 75px;
     font-size: 30px;
+    width: 200px;
+    height: 200px;
+    list-style: none;
+    background-color: blueviolet;
   }
+
+  .lista{
+    list-style: none;
+    background-color: #0000009b;
+    border-radius: 10px;
+  }
+
+  .item{
+    width: 100%;
+  }
+
+  .item-resize{
+    width: 200px;
+    margin: 5%;
+    border-radius: 10px;
+  }
+
+  .header{
+    min-height: 150px;
+    min-width: 25%;
+    max-height: 200px;
+    background-color: black;
+  }
+
+  .Reorder{
+    display:inline-block;
+    width: 100%;
+  }
+
+  .content{
+    padding-top:3%;
+  }
+
+  audio{
+    width: 100%;
+    border-radius: 10px;
+  }
+
+.title{
+  margin-left: 1%;
+  font-size: 1.50em;
+  color:#fbfbfb;
+}
+
+h1 {
+  background-color: black;
+}
 /*
 .playlist{
     background-color: aqua;

@@ -1,4 +1,4 @@
-import one from '../img/albuns/1.jpeg';
+import one from '../img/albuns/1.jpg';
 import two from '../img/albuns/2.jpeg';
 import three from '../img/albuns/3.jpeg';
 import four from '../img/albuns/4.jpeg';
@@ -10,27 +10,31 @@ import eight from '../img/albuns/8.jpeg';
 const playlistsMock = [
     {
         id: 1,
-        nome: 'Melhores Rock',
+        nome: 'A alguns quilômetros de lugar nenhum',
         capa: one,
         musicas:[
             {
                 id: 1,
-                nome:'nameMusic',
+                nome:'Lost In The City',
+                cantor: 'HoliznaCC0',
                 arquivo: '/music/One.mp3' 
             },
             {
                 id: 2,
-                nome:'name Music 2',
+                nome:'Sensual Folk',
+                cantor:'Scott Holmes Music',
                 arquivo: 'musica2.mp3'
             },
             {
                 id: 3,
-                nome:'nameMusic',
+                nome:'January-June-and-December',
+                cantor:'Ketsa',
                 arquivo: 'musica.mp3'
             },
             {
                 id: 4,
-                nome:'name Music 2',
+                nome:'How Can Things Be',
+                cantor:'HoliznaCC0',
                 arquivo: 'musica2.mp3'
             }
         ]
