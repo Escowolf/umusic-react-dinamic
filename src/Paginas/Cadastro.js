@@ -1,5 +1,5 @@
 import { useState } from "react";
-import usuario from "./userMock";
+import usuario from "./users/userMock";
 
 export function Cadastro() {
   const [email, setEmail] = useState("");
@@ -46,7 +46,7 @@ export function Cadastro() {
             <div className="form-check form-check-inline">
               <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" />
               <label className="form-check-label">Não-binário</label>
-            </div>
+            </div><br/>
 
 
             <button type="submit" value="Enviar" className="btn btn-primary btn-lg">Enviar</button>

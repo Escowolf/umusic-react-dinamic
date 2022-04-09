@@ -1,9 +1,8 @@
-import '../css/Faq.css';
-import background from '../img/background.png';
+import './css/Faq.css';
 
 function Faq() {
     return (
-    <><div className="faq" style={{ backgroundImage: "url(../img/background.png)",
+    <><div className="faq" style={{ backgroundImage: "url(./img/background.png)",
     backgroundRepeat: 'no-repeat'
 }}>
             <div className="container">

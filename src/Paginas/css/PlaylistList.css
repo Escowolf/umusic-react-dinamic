@@ -1,0 +1,61 @@
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgb(216, 228, 240);
+  }
+  
+  .flex-container > div {
+    background-color: #ea5757;
+    width: 100px;
+    margin: 10px;
+    text-align: center;
+    line-height: 75px;
+    font-size: 30px;
+  }
+/*
+.playlist{
+    background-color: aqua;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content:  space-evenly;
+}
+
+.card{
+    width: 200px;
+    height: 200px;    
+    align-items: center;
+    list-style-type: none;
+    background-color: black;
+}
+
+.playlist li{
+    width: 100%;
+}
+
+{/* 
+        <div className="container">
+          <div className="flex-container">
+            
+            <div className="div">
+              <div className="card">
+              <Link to={`/playlists/${p.id}`}>
+              <img className="card-img-top" src={p.capa} alt="Card image"/>
+              </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      )
+    }
+    
+  );
+
+  
+
+  return (
+    <>
+      {data}
+    
+
+*/

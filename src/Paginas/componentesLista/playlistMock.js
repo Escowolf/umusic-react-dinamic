@@ -1,11 +1,11 @@
-import one from './albuns/1.jpeg';
-import two from './albuns/2.jpeg';
-import three from './albuns/3.jpeg';
-import four from './albuns/4.jpeg';
-import five from './albuns/5.jpeg';
-import six from './albuns/6.jpeg';
-import seven from './albuns/7.jpeg';
-import eight from './albuns/8.jpeg';
+import one from '../img/albuns/1.jpeg';
+import two from '../img/albuns/2.jpeg';
+import three from '../img/albuns/3.jpeg';
+import four from '../img/albuns/4.jpeg';
+import five from '../img/albuns/5.jpeg';
+import six from '../img/albuns/6.jpeg';
+import seven from '../img/albuns/7.jpeg';
+import eight from '../img/albuns/8.jpeg';
 
 const playlistsMock = [
     {
@@ -16,7 +16,7 @@ const playlistsMock = [
             {
                 id: 1,
                 nome:'nameMusic',
-                arquivo: 'musica.mp3'
+                arquivo: '/music/One.mp3' 
             },
             {
                 id: 2,

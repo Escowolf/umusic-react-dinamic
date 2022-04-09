@@ -1,6 +1,6 @@
-import happy from '../img/happy_people.jpg';
-import concept from '../img/disco.gif';
-import '../css/Home.css';
+import happy from './img/happy_people.jpg';
+import concept from './img/disco.gif';
+import './css/Home.css';
 
 function Home() {
     return (
