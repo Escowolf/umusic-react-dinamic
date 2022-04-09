@@ -20,6 +20,15 @@ export function Cadastro() {
     console.log(usuario);
   }
 
+  function comparaEmail(){
+//criar uma variável que exiba se os e-mails correspondem ou não;
+    if (email != emailVerify){
+      console.log("Os e-mails não correspondem!");    
+    }else{
+      console.log("Tudo ok!")
+        }
+  }
+
   return (
     <div className="cadastro">
       <div className="container">
@@ -29,7 +38,7 @@ export function Cadastro() {
           <br /><br />
           <form onSubmit={(e) => handleSubmit(e)}>
             <input className="form-control form-control-lg" id="email" type="email" onChange={(e) => setEmail(e.target.value)} placeholder="E-mail" /><br />
-            <input className="form-control form-control-lg" id="emailVerify" type="email" onChange={(e) => setEmailVerify(e.target.value)} placeholder="Confirmar e-mail" /><br />
+            <input className="form-control form-control-lg" id="emailVerify" type="email" onkeyup={comparaEmail()} onChange={(e) => setEmailVerify(e.target.value)} placeholder="Confirmar e-mail" /><br />
             <input className="form-control form-control-lg" id="password" type="password"  onChange={(e) => setSenha(e.target.value)} placeholder="Senha" /><br />
             <input className="form-control form-control-lg" id="nome" type="text"  onChange={(e) => setNome(e.target.value)} placeholder="Como devemos chamar você?" /><br />
             <label className="col-sm-10 col-form-label col-form-label-lg">Data de Nascimento</label><br />

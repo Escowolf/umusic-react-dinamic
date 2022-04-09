@@ -1,12 +1,11 @@
 import { useParams } from "react-router-dom";
 import playlistsMock from "./playlistMock";
-import 'react-h5-audio-player/lib/styles.css';
 
 
 function PlaylistDetail() {
   const { id } = useParams();
 //"variável" para encontrar a playlist pelo id
-  const playlistSelecionada = playlistsMock.find((playDados) => playDados.id === id);
+  const playlistSelecionada = playlistsMock.find((playDados) => playDados.id == id);
 //"variável" para listar as músicas encontradas no vetor musicas da playlist
   const musicas = playlistSelecionada.musicas.map((playDados)=>{
   return(

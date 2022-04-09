@@ -5,7 +5,7 @@ function Menu() {
   return (<>
     <header>
       <nav className="navbar navbar-expand-lg fixed-top">
-        <Link to="/"><img src="https://live.staticflickr.com/65535/51894192435_56e9fb2955_z.jpg" className="d-inline-block align-top" height="50"></img></Link>
+        <Link to="/"><img src="https://live.staticflickr.com/65535/51894192435_56e9fb2955_z.jpg" className="d-inline-block align-top" height="50" alt="Logo site"></img></Link>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
