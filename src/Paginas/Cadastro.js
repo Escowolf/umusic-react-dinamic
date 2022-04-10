@@ -30,10 +30,9 @@ export function Cadastro() {
   }
 
   return (
-    <div className="cadastro">
       <div className="container">
+        <div className="cadastro">
         <br /><br />
-        <div className="content">
           <h1>Increva-se</h1>
           <br /><br />
           <form onSubmit={(e) => handleSubmit(e)}>
@@ -45,24 +44,25 @@ export function Cadastro() {
             <input className="form-control form-control-lg" id="dataNascimento" type="date"  onChange={(e) => setDataNascimento(e.target.value)} placeholder="Data de Nascimento" /><br />
 
             <div className="form-check form-check-inline">
-              <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" />
+              <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Feminino" />
               <label className="form-check-label">Feminino</label>
             </div>
             <div className="form-check form-check-inline">
-              <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" />
+              <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="Masculino<" />
               <label className="form-check-label">Masculino</label>
             </div>
             <div className="form-check form-check-inline">
-              <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" />
+              <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="Não-binário" />
               <label className="form-check-label">Não-binário</label>
             </div><br/>
 
 
-            <button type="submit" value="Enviar" className="btn btn-primary btn-lg">Enviar</button>
+          <center><button type="submit" value="Enviar" className="btn btn-primary btn-lg btn-block">Enviar</button></center>  
           </form>
         </div>
+        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
       </div>
-    </div>
+    
   );
 }
 
