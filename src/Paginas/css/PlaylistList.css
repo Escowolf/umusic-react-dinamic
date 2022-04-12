@@ -1,20 +1,12 @@
-.allAlbuns{
-padding-top:3%;
-position: relative;
-height: 100vh;
-background: url(/public/img/background.png) no-repeat center center fixed; 
--webkit-background-size: cover;
--moz-background-size: cover;
--o-background-size: cover;
-background-size: cover;
-}
-.flex-container {
-  padding-top:3%;
-  display: flex;
-  flex-wrap: wrap;
-  width: 70%;
-  margin:auto;
-}
+  .flex-container {
+    padding-top:3%;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    width: 100%;
+    justify-content: center;
+  }
+
 
 .flex-container > li{
   text-align: center;
@@ -33,44 +25,4 @@ background-size: cover;
 
 .item{
   width: 100%;
-}
-
-.item-resize{
-  width: 200px;
-  margin: 5%;
-  border-radius: 10px;
-}
-
-.header{
-  min-height: 150px;
-  min-width: 25%;
-  max-height: 200px;
-  background-color: black;
-}
-
-.Reorder{
-  display:inline-block;
-  width: 100%;
-}
-
-.content{
-  background-color: rgba(51, 22, 79, 0.511);
-  padding-top:1%;
-}
-
-audio{
-  width: 100%;
-  border-radius: 10px;
-}
-
-.titleOff{
-margin-left: 1%;
-font-size: 1.50em;
-color:#fbfbfb;
-}
-.playTitle{
-  color: rgb(255, 255, 255);
-  vertical-align: text-bottom;
-  text-shadow: 0 0 0.2em rgb(0, 0, 0), 0 0 0.2em #87F,
-        0 0 0.2em rgb(16, 2, 112);
 }

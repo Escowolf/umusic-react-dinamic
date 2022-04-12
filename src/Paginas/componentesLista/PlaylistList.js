@@ -5,7 +5,7 @@ import '../css/PlaylistList.css';
 
 function PlaylistList() {
     return (
-      <div className="allAlbuns">
+      <div className="background">
       <div className="container">
         <h1>Playlists</h1>
         <center><h2>O que vamos ouvir hoje?</h2></center>

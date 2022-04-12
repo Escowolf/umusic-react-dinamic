@@ -1,12 +1,19 @@
 header{
-    background-color: #E57147;
-    background: solid;
-    height:60px;
+background-color: #E57147;
+background: solid;
+height:60px;
 }
 Link{
-    color:white!important;
+color:white!important;
 }
 .navItem{
-    text-decoration: none;
-    color:white;
+text-decoration: none;
+color:white;
+}
+
+@media (min-width: 992px){.navbar-expand-lg {
+flex-wrap: wrap;
+justify-content: flex-start;
+background-color: #E57147;
+}
 }
