@@ -1,5 +1,6 @@
 import { useState } from "react";
 import usuario from "./users/userMock";
+import './css/Cadastro.css'
 
 export function Cadastro() {
   const [email, setEmail] = useState("");
@@ -33,8 +34,9 @@ export function Cadastro() {
   }
 
   return (
+    <div className="cadastro">
       <div className="container">
-        <div className="cadastro">
+        
         <br /><br />
           <h1>Increva-se</h1>
           <br /><br />
@@ -57,12 +59,12 @@ export function Cadastro() {
             <div className="form-check form-check-inline">
               <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="Não-binário" />
               <label className="form-check-label">Não-binário</label>
-            </div><br/>
+            </div><br/><br/>
 
 
           <center><button type="submit" value="Enviar" className="btn btn-primary btn-lg btn-block">Enviar</button></center>  
           </form>
-        </div>
+        </div><br/>
       </div>
     
   );
