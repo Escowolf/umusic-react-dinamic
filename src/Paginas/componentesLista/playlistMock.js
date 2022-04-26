@@ -1,17 +1,9 @@
-import one from '../img/albuns/1.jpg';
-import two from '../img/albuns/2.jpg';
-import three from '../img/albuns/3.jpg';
-import four from '../img/albuns/4.jpeg';
-import five from '../img/albuns/5.jpeg';
-import six from '../img/albuns/6.jpeg';
-import seven from '../img/albuns/7.jpeg';
-import eight from '../img/albuns/8.jpeg';
-
+{/*
 const playlistsMock = [
     {
         id: 1,
         nome: 'A alguns quilômetros de lugar nenhum',
-        capa: one,
+        capa: "/public/img/albuns/1",
         musicas:[
             {
                 id: 1,
@@ -41,8 +33,8 @@ const playlistsMock = [
     },
     {
         id: 2,
-        nome: 'Bom dia, flor do dia',
-        capa: two,
+        nome: "/public/img/albuns/2",
+        capa: "/public/img/albuns/2",
         musicas:[
             {
                 id: 1,
@@ -73,7 +65,7 @@ const playlistsMock = [
     {
         id: 3,
         nome: "That's a rap!",
-        capa: three,
+        capa: "/public/img/albuns/3",
         musicas:[
             {
                 id: 1,
@@ -104,7 +96,7 @@ const playlistsMock = [
     {	
         id: 4,
         nome: 'Festinha de quintal',
-        capa: four,
+        capa: "/public/img/albuns/4",
         musicas:[
             {
                 id: 1,
@@ -135,7 +127,7 @@ const playlistsMock = [
     {
         id: 5,
         nome: 'Chilling',
-        capa: five,
+        capa: "/public/img/albuns/5",
         musicas:[
             {		
                 id: 1,
@@ -166,7 +158,7 @@ const playlistsMock = [
     {
         id: 6,
         nome: 'Para ouvir com The Mozão',
-        capa: six,
+        capa: "/public/img/albuns/6",
         musicas:[
             { 	
                 id: 1,
@@ -197,7 +189,7 @@ const playlistsMock = [
     {
         id: 7,
         nome: 'Sunny',
-        capa: seven,
+        capa: "/public/img/albuns/7",
         musicas:[
             {
                 id: 1,
@@ -228,7 +220,7 @@ const playlistsMock = [
     {
         id: 8,
         nome: 'Boss Beat',
-        capa: eight,
+        capa: "/public/img/albuns/8",
         musicas:[
             {	               	
                 id: 1,
@@ -259,3 +251,4 @@ const playlistsMock = [
 ]
 
 export default playlistsMock;
+*/}
