@@ -13,10 +13,10 @@ export function Cadastro() {
   function handleSubmit(e){
     e.preventDefault();
 
-      axios.post('http://localhost:4000/playlists', {
+      axios.post('http://localhost:4000/usuarios', {
         email, senha, data, nome 
       })
-      .then((res)=> setPlaylists(res.data))
+      .then((res)=> (res.data))
 
     alert("Usuário cadastrado com sucesso!");
     console.log(usuario);
