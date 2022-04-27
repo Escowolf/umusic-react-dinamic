@@ -1,5 +1,5 @@
 import { useState } from "react";
-import usuario from "./users/userMock";
+import axios from "axios";
 import './css/Cadastro.css'
 
 export function Cadastro() {
@@ -13,7 +13,11 @@ export function Cadastro() {
   function handleSubmit(e){
     e.preventDefault();
 
-    usuario.push({nome , senha, email, data});
+      axios.post('http://localhost:4000/playlists', {
+        email, senha, data, nome 
+      })
+      .then((res)=> setPlaylists(res.data))
+
     alert("Usuário cadastrado com sucesso!");
     console.log(usuario);
 
