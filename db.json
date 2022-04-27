@@ -34,7 +34,7 @@
   {
       "id": 2,
       "nome": "Bom dia, flor do dia",
-      "capa": "../img/albuns/1.jpg",
+      "capa": "../img/albuns/2.jpg",
       "musicas":[
           {
               "id": 1,
@@ -65,7 +65,7 @@
   {
       "id": 3,
       "nome": "That's a rap!",
-      "capa": "/public/img/albuns/3.jpg",
+      "capa": "../img/albuns/3.jpg",
       "musicas":[
           {
               "id": 1,
@@ -96,7 +96,7 @@
   {	
       "id": 4,
       "nome": "Festinha de quintal",
-      "capa": "/public/img/albuns/4.jpeg",
+      "capa": "../img/albuns/4.jpeg",
       "musicas":[
           {
               "id": 1,
@@ -127,7 +127,7 @@
   {
       "id": 5,
       "nome": "Chilling",
-      "capa": "/public/img/albuns/5.jpeg",
+      "capa": "../img/albuns/5.jpeg",
       "musicas":[
           {		
               "id": 1,
@@ -158,7 +158,7 @@
   {
       "id": 6,
       "nome": "Para ouvir com The Mozão",
-      "capa": "/public/img/albuns/6.jpeg",
+      "capa": "../img/albuns/6.jpeg",
       "musicas":[
           { 	
               "id": 1,
@@ -189,7 +189,7 @@
   {
       "id": 7,
       "nome": "Sunny",
-      "capa": "/public/img/albuns/7.jpeg",
+      "capa": "../img/albuns/7.jpeg",
       "musicas":[
           {
               "id": 1,
@@ -220,7 +220,7 @@
   {
       "id": 8,
       "nome": "Boss Beat",
-      "capa": "/public/img/albuns/8.jpeg",
+      "capa": "../img/albuns/8.jpeg",
       "musicas":[
           {	               	
               "id": 1,
