@@ -19,8 +19,11 @@ export function Cadastro() {
       .then((res)=> (res.data))
 
     alert("Usuário cadastrado com sucesso!");
-    console.log(usuario);
 
+    cleanAll();
+  }
+
+  function cleanAll(){
     setNome("");
     setEmail("");
     setEmailVerify("");
