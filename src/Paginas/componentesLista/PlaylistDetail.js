@@ -1,18 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from "react-router-dom";
+import axios from "axios";
 import '../css/PlaylistDetail.css'
 
 function PlaylistDetail() {
-  const [playlists, setPlaylists] = useState([]);
-  const params = useParams();
+  const [playlistSelecionada, setPlaylistSelecionada] = useState({musicas: []});
+  const { id } = useParams();
 
   useEffect(() => {
-    axios.get("http://localhost:4000/playlist")
-        .then((res) => setPlaylists(res.data));
-}, [])
+    axios.get(`http://localhost:4000/playlists/${id}`)
+        .then((res) => {
+          console.log(res.data)
+          setPlaylistSelecionada(res.data)
+        });
+  }, [])
 
-const playlistSelecionada = playlists.find((playDados) => playDados.id == id);
-const musicas = playlistSelecionada.musicas.map((playDados)=>{
+console.log(playlistSelecionada)
+const musicas = playlistSelecionada?.musicas.map((playDados)=>{
 return(
 
 <li className="lista">
