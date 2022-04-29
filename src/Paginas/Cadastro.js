@@ -71,7 +71,7 @@ export function Cadastro() {
 
           <center><button type="submit" value="Enviar" className="btn btn-primary btn-lg btn-block">Enviar</button></center>  
           </form>
-        </div><br/>
+        </div><br/><br/><br/>
       </div>
     
   );
