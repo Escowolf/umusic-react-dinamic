@@ -1,7 +1,6 @@
 import { useRef, useState, useEffect, useContext } from 'react';
-import AuthContext from "./context/AuthProvider";
-
-import axios from 'axios';
+import AuthContext from "../context/AuthProvider";
+import axios from "axios";
 const LOGIN_URL = '/auth';
 
 const Login = () => {
@@ -34,20 +33,22 @@ const Login = () => {
                 }
             );
             console.log(JSON.stringify(response?.data));
-
-            setAuth({ user, pwd });
+            //console.log(JSON.stringify(response));
+            const accessToken = response?.data?.accessToken;
+            const roles = response?.data?.roles;
+            setAuth({ user, pwd, roles, accessToken });
             setUser('');
             setPwd('');
             setSuccess(true);
         } catch (err) {
             if (!err?.response) {
-                setErrMsg('Sem resposta do servidor');
+                setErrMsg('No Server Response');
             } else if (err.response?.status === 400) {
-                setErrMsg('Usuário ou senha errada');
+                setErrMsg('Missing Username or Password');
             } else if (err.response?.status === 401) {
-                setErrMsg('Não autorizado');
+                setErrMsg('Unauthorized');
             } else {
-                setErrMsg('Falha no login');
+                setErrMsg('Falha no login!');
             }
             errRef.current.focus();
         }
@@ -102,4 +103,4 @@ const Login = () => {
     )
 }
 
-export default Login;
+export default Login

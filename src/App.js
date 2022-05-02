@@ -7,6 +7,7 @@ import Rodape from './Paginas/Rodape';
 import Cadastro from './Paginas/Cadastro';
 import PlaylistDetail from "./Paginas/componentesLista/PlaylistDetail";
 import PlaylistList from "./Paginas/componentesLista/PlaylistList";
+import Login from "./Paginas/Login";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/faq" element={<Faq />} />
         <Route path="/play" element={<PlaylistList/>} />
         <Route path="/playlists/:id" element={<PlaylistDetail/>} />
+        <Route path="/login" element={<Login/>} />
        <Route path="/inscricao" element={<Cadastro />} />
       </Routes>
     <Rodape />
