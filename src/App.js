@@ -9,11 +9,20 @@ import PlaylistDetail from "./Paginas/componentesLista/PlaylistDetail";
 import PlaylistList from "./Paginas/componentesLista/PlaylistList";
 import Login from "./Paginas/Login";
 import UserHome from "./Paginas/user/UserHome";
+import { useState } from "react";
+import MenuAuth from "./Paginas/user/MenuAuth";
 
 function App() {
+
+  const Online = JSON.parse(localStorage.getItem('Logado'));
+  const [On, setOn] = useState(Online);
+
   return (
     <div className="principal">
-    <Menu />
+        {!On ? 
+      <Menu /> : 
+      <MenuAuth />
+    }
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/faq" element={<Faq />} />

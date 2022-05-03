@@ -14,8 +14,8 @@ function Login() {
       .then((resp) => {
         let login = resp.data.find((p) => p.nome == nome && p.senha == senha);
         if (login) {
-          localStorage.setItem('usuarioLogado', JSON.stringify(login.id));
-          (JSON.parse(localStorage.getItem('usuarioLogado')));
+          localStorage.setItem('Logado', JSON.stringify(login.id));
+          (JSON.parse(localStorage.getItem('Logado')));
           navigate(`/inicio/${login.id}`, {state:{id:login.id}}, { replace: true })
         }
       }
