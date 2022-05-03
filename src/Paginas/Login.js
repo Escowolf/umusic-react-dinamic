@@ -8,8 +8,8 @@ const Login = () => {
     const userRef = useRef();
     const errRef = useRef();
 
-    const [user, setUser] = useState('');
-    const [pwd, setPwd] = useState('');
+    const [nome, setNome] = useState('');
+    const [senha, setSenha] = useState('');
     const [errMsg, setErrMsg] = useState('');
     const [success, setSuccess] = useState(false);
 
@@ -19,14 +19,14 @@ const Login = () => {
 
     useEffect(() => {
         setErrMsg('');
-    }, [user, pwd])
+    }, [nome, senha])
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
         try {
             const response = await axios.post(LOGIN_URL,
-                JSON.stringify({ user, pwd }),
+                JSON.stringify({ nome, senha }),
                 {
                     headers: { 'Content-Type': 'application/json' },
                     withCredentials: true
@@ -36,7 +36,7 @@ const Login = () => {
             //console.log(JSON.stringify(response));
             const accessToken = response?.data?.accessToken;
             const roles = response?.data?.roles;
-            setAuth({ user, pwd, roles, accessToken });
+            setAuth({ nome, senha, roles, accessToken });
             setUser('');
             setPwd('');
             setSuccess(true);
@@ -75,8 +75,8 @@ const Login = () => {
                             id="username"
                             ref={userRef}
                             autoComplete="off"
-                            onChange={(e) => setUser(e.target.value)}
-                            value={user}
+                            onChange={(e) => setNome(e.target.value)}
+                            value={nome}
                             required
                         />
 
@@ -84,8 +84,8 @@ const Login = () => {
                         <input
                             type="password"
                             id="password"
-                            onChange={(e) => setPwd(e.target.value)}
-                            value={pwd}
+                            onChange={(e) => setSenha(e.target.value)}
+                            value={senha}
                             required
                         />
                         <button>Sign In</button>
