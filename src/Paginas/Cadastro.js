@@ -1,5 +1,5 @@
 import { useState } from "react";
-import usuario from "./users/userMock";
+import axios from "axios";
 import './css/Cadastro.css'
 
 export function Cadastro() {
@@ -13,10 +13,17 @@ export function Cadastro() {
   function handleSubmit(e){
     e.preventDefault();
 
-    usuario.push({nome , senha, email, data});
-    alert("Usuário cadastrado com sucesso!");
-    console.log(usuario);
+      axios.post('http://localhost:4000/usuarios', {
+        email, senha, data, nome 
+      })
+      .then((res)=> (res.data))
 
+    alert("Usuário cadastrado com sucesso!");
+
+    cleanAll();
+  }
+
+  function cleanAll(){
     setNome("");
     setEmail("");
     setEmailVerify("");
@@ -64,7 +71,7 @@ export function Cadastro() {
 
           <center><button type="submit" value="Enviar" className="btn btn-primary btn-lg btn-block">Enviar</button></center>  
           </form>
-        </div><br/>
+        </div><br/><br/><br/>
       </div>
     
   );

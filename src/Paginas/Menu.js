@@ -16,7 +16,7 @@ function Menu() {
         </button>
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div className="navbar-nav">
-            <Link to="/" className="nav-item nav-link text-light active">Home</Link>
+            <Link to="/login" className="nav-item nav-link text-light active">Login</Link>
             <Link to="/faq" className="nav-item nav-link text-light">Faq</Link>
             <Link to="/inscricao" className="nav-item nav-link text-light">Inscrever</Link>
             <Link to="/play" className="nav-item nav-link text-light">Playlists</Link>
