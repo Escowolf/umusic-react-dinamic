@@ -1,110 +1,66 @@
-import { useRef, useState, useEffect } from 'react';
-import useAuth from '../Paginas/hooks/useAuth';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
-import useInput from '../Paginas/hooks/useInput';
-import useToggle from '../Paginas/hooks/useToggle';
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+import { useState } from "react";
 
-import axios from '../api/api.js';
-const LOGIN_URL = '/auth';
+function Login() {
 
-const Login = () => {
-    const { setAuth } = useAuth();
+  const navigate = useNavigate();
+  const [nome, setNome] = useState();
+  const [senha, setSenha] = useState();
 
-    const navigate = useNavigate();
-    const location = useLocation();
-    const from = location.state?.from?.pathname || "/";
-
-    const userRef = useRef();
-    const errRef = useRef();
-
-    const [user, resetUser, userAttribs] = useInput('user', '')
-    const [pwd, setPwd] = useState('');
-    const [errMsg, setErrMsg] = useState('');
-    const [check, toggleCheck] = useToggle('persist', false);
-
-    useEffect(() => {
-        userRef.current.focus();
-    }, [])
-
-    useEffect(() => {
-        setErrMsg('');
-    }, [user, pwd])
-
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-
-        try {
-            const response = await axios.post(LOGIN_URL,
-                JSON.stringify({ user, pwd }),
-                {
-                    headers: { 'Content-Type': 'application/json' },
-                    withCredentials: true
-                }
-            );
-            const accessToken = response?.data?.accessToken;
-            const roles = response?.data?.roles;
-            setAuth({ user, pwd, roles, accessToken });
-            resetUser();
-            setPwd('');
-            navigate(from, { replace: true });
-        } catch (err) {
-            if (!err?.response) {
-                setErrMsg('No Server Response');
-            } else if (err.response?.status === 400) {
-                setErrMsg('Missing Username or Password');
-            } else if (err.response?.status === 401) {
-                setErrMsg('Unauthorized');
-            } else {
-                setErrMsg('Login Failed');
-            }
-            errRef.current.focus();
+  function logar(e) {
+    e.preventDefault();
+    axios.get("http://localhost:4000/usuarios")
+      .then((resp) => {
+        let login = resp.data.find((p) => p.nome == nome && p.senha == senha);
+        if (login) {
+          localStorage.setItem('usuarioLogado', JSON.stringify(login.id));
+          (JSON.parse(localStorage.getItem('usuarioLogado')));
+          navigate(`/inicio/${login.id}`, {state:{id:login.id}}, { replace: true })
         }
-    }
+      }
+      );
+  }
 
-    return (
+  return (
+    <main className="login">
+      <section className="login_caixa">
+        <h2>Login</h2>
+        <form onSubmit={logar} className="login_formulario">
+        <input className="form-control form-control-lg" 
+        id="nome" 
+        type="text" 
+        value={nome} 
+        onChange={(e) => setNome(e.target.value)} 
+        placeholder="Como devemos chamar você?" 
+        required/><br />
 
-        <section>
-            <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
-            <h1>Sign In</h1>
-            <form onSubmit={handleSubmit}>
-                <label htmlFor="username">Username:</label>
-                <input
-                    type="text"
-                    id="username"
-                    ref={userRef}
-                    autoComplete="off"
-                    {...userAttribs}
-                    required
-                />
-
-                <label htmlFor="password">Password:</label>
-                <input
-                    type="password"
-                    id="password"
-                    onChange={(e) => setPwd(e.target.value)}
-                    value={pwd}
-                    required
-                />
-                <button>Sign In</button>
-                <div className="persistCheck">
-                    <input
-                        type="checkbox"
-                        id="persist"
-                        onChange={toggleCheck}
-                        checked={check}
-                    />
-                    <label htmlFor="persist">Trust This Device</label>
-                </div>
-            </form>
-            <p>
-                Need an Account?<br />
-                <span className="line">
-                    <Link to="/register">Sign Up</Link>
-                </span>
-            </p>
-        </section>
-
-    )
+        <input className="form-control form-control-lg" 
+        id="password" 
+        type="password" 
+        value={senha} 
+        onChange={(e) => setSenha(e.target.value)} 
+        placeholder="Senha" 
+        required/><br />
+          <br />
+          <div className="login_formulario_enviar">
+            <input
+              className="login__formulario_botao"
+              type="submit"
+              value="Continuar"
+            />
+          </div>
+        </form>
+        <br />
+        <div className="login_formulario_info">
+          <p>
+            Não tem cadastro?
+            <Link to="/cadastro">Cadastre-se</Link>
+          </p>
+        </div>
+      </section>
+    </main>
+  );
 }
 
-export default Login
+export default Login;

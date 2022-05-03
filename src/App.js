@@ -8,6 +8,7 @@ import Cadastro from './Paginas/Cadastro';
 import PlaylistDetail from "./Paginas/componentesLista/PlaylistDetail";
 import PlaylistList from "./Paginas/componentesLista/PlaylistList";
 import Login from "./Paginas/Login";
+import UserHome from "./Paginas/user/UserHome";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/play" element={<PlaylistList/>} />
         <Route path="/playlists/:id" element={<PlaylistDetail/>} />
         <Route path="/login" element={<Login/>} />
+        <Route path="/inicio/:id" element={<UserHome/>} />
        <Route path="/inscricao" element={<Cadastro />} />
       </Routes>
     <Rodape />
