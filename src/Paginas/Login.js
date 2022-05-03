@@ -1,9 +1,8 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { useState } from "react";
 
-function Login() {
-
+function Login({setOn}) {
   const navigate = useNavigate();
   const [nome, setNome] = useState();
   const [senha, setSenha] = useState();
@@ -15,7 +14,7 @@ function Login() {
         let login = resp.data.find((p) => p.nome == nome && p.senha == senha);
         if (login) {
           localStorage.setItem('Logado', JSON.stringify(login.id));
-          (JSON.parse(localStorage.getItem('Logado')));
+          setOn(JSON.parse(localStorage.getItem('Logado')));
           navigate(`/inicio/${login.id}`, {state:{id:login.id}}, { replace: true })
         }
       }

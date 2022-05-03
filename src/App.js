@@ -28,7 +28,7 @@ function App() {
         <Route path="/faq" element={<Faq />} />
         <Route path="/play" element={<PlaylistList/>} />
         <Route path="/playlists/:id" element={<PlaylistDetail/>} />
-        <Route path="/login" element={<Login/>} />
+        <Route path="/login" element={ <Login setOn = {setOn}/>} />
         <Route path="/inicio/:id" element={<UserHome/>} />
        <Route path="/inscricao" element={<Cadastro />} />
       </Routes>
