@@ -17,6 +17,9 @@ function UserHome() {
         });
   }, []) 
 
+  const usuario = JSON.parse(localStorage.getItem('usuarioLogado'))
+  console.log(usuario.nome);
+
 return(<>
 <div class="container">
   <div className="BoxPerfil">
@@ -25,7 +28,7 @@ return(<>
     <img src={UserExemple} className="perfil" alt="girl_example" />
     </div>
     <div class="col-8">
-    <h1 className="UserNome">{nome}</h1>
+    <h1 className="UserNome">{usuario.nome}</h1>
     </div>
   </div>
   <br/>

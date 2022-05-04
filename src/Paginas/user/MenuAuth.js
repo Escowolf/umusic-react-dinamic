@@ -2,6 +2,10 @@ import { Link } from "react-router-dom";
 import logo from '../img/logoUmus.png';
 import '../css/MenuAuth.css';
 
+function logout(){
+  localStorage.removeItem("usuarioLogado");
+}
+
 function MenuAuth() {
   
   return (<>
@@ -22,7 +26,7 @@ function MenuAuth() {
             <Link to="/" className="nav-item nav-link text-light active">Perfil</Link>
             <Link to="/play" className="nav-item nav-link text-light">Playlists</Link>
             <Link to="/faq" className="nav-item nav-link text-light">Faq</Link>
-            <Link to="/" className="nav-item nav-link text-light">Logout</Link>
+            <button className="nav-item nav-link text-light" onClick={logout}>Logout</button>
           </div>
         </div>
       </nav>

@@ -1,22 +1,24 @@
+.PlaylistsContent{
+  padding: 5%;
+  background-color: rgba(0, 0, 0, 0.637);
+}
 .conteudo {
     padding-top:5%;
     display: flex;
     flex-wrap: nowrap;
     text-align: center;
-    overflow: scroll;
+    overflow: scroll auto;
     width: 100%;
     justify-content: center;
   }
 
   .conteudo > li{
     text-align: center;
-    width: 200px;
-    height: auto;
     list-style: none;
     display: inline-block;
     background-color: rgb(255, 255, 255);
-    margin: 10px;
+    margin: 5px;
 }
 .itemNew{
-  width: 100%;
+  width: 200px;
 }

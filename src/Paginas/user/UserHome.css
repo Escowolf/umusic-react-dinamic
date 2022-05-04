@@ -11,6 +11,10 @@
     border-radius: 50%;
 }
 
+.container{
+    height: 100vh;
+}
+
 .UserNome{
    margin-top: 15%; 
 }

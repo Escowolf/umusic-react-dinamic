@@ -2,9 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import './PlayUser.css';
-import BotaoCreate from './BotaoCreate';
 
 function PlayUser(){
+    const usuario = JSON.parse(localStorage.getItem('usuarioLogado'))
+    console.log(usuario.nome);
     
   const [playlists, setPlaylists] = useState([]);
 
@@ -26,6 +27,7 @@ function PlayUser(){
     return (
       <>
       <div className='PlaylistsContent'>
+      <h1>{usuario.nome}</h1>
         <h1>Playlists</h1>
         <ul className="conteudo">
         <p>Nova playlist</p>
@@ -37,3 +39,4 @@ function PlayUser(){
 }
 
 export default PlayUser;
+

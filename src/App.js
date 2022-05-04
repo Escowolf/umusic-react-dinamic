@@ -11,15 +11,17 @@ import Login from "./Paginas/PaginasNoAuth/Login";
 import UserHome from "./Paginas/user/UserHome";
 import { useState } from "react";
 import MenuAuth from "./Paginas/user/MenuAuth";
+import Profile from "./Paginas/PaginasAuth/Login2";
+import HomeAuth from "./Paginas/PaginasAuth/HomeAuth";
 
 function App() {
 
-  const Online = JSON.parse(localStorage.getItem('Logado'));
+  const Online = JSON.parse(localStorage.getItem('usuarioLogado'));
   const [On, setOn] = useState(Online);
 
   return (
     <div className="principal">
-        {!On ? 
+        {!Online ? 
       <Menu /> : 
       <MenuAuth />
     }
@@ -28,9 +30,12 @@ function App() {
         <Route path="/faq" element={<Faq />} />
         <Route path="/play" element={<PlaylistList/>} />
         <Route path="/playlists/:id" element={<PlaylistDetail/>} />
-        <Route path="/login" element={ <Login setOn = {setOn}/>} />
+        {/*<Route path="/login-fin" element={ <Login setOn = {setOn}/>} />*/}
         <Route path="/inicio/:id" element={<UserHome/>} />
        <Route path="/inscricao" element={<Cadastro />} />
+       <Route path="/login" element={<Profile />} />
+       <Route path="/home" element={<HomeAuth />} />
+
       </Routes>
     <Rodape />
     </div>

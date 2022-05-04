@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+{/*import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useState } from "react";
 import logo from '../img/logoUmus.png';
@@ -8,6 +8,8 @@ function Login({setOn}) {
 const navigate = useNavigate();
 const [nome, setNome] = useState();
 const [senha, setSenha] = useState();
+
+
 
 function logar(e) {
   e.preventDefault();
@@ -68,4 +70,4 @@ return (
 );
 }
 
-export default Login;
+export default Login;*/}
