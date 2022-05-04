@@ -1,8 +1,15 @@
 .cadastro{
 position: relative;
+<<<<<<< Updated upstream
 height: 100%;
+=======
+>>>>>>> Stashed changes
 background: url(../img/concentradInv.png) no-repeat right fixed;
 background-size:contain;
+}
+
+.container{
+  height: 100vh;
 }
 
 form{
