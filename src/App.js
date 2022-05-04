@@ -7,33 +7,30 @@ import Rodape from './Paginas/PaginasNoAuth/Rodape';
 import Cadastro from './Paginas/PaginasNoAuth/Cadastro';
 import PlaylistDetail from "./Paginas/componentesLista/PlaylistDetail";
 import PlaylistList from "./Paginas/componentesLista/PlaylistList";
-<<<<<<< Updated upstream
-import Login from "./Paginas/Login";
-=======
 import Login from "./Paginas/PaginasNoAuth/Login";
 import UserHome from "./Paginas/user/UserHome";
 import { useState } from "react";
 import MenuAuth from "./Paginas/user/MenuAuth";
-import Initio from "./Paginas/PaginasAuth/PlayUser";
->>>>>>> Stashed changes
 
 function App() {
+
+  const Online = JSON.parse(localStorage.getItem('Logado'));
+  const [On, setOn] = useState(Online);
+
   return (
     <div className="principal">
-<<<<<<< Updated upstream
-    <Menu />
-=======
-        {!On ? <Menu/> :  <MenuAuth />
+        {!On ? 
+      <Menu /> : 
+      <MenuAuth />
     }
->>>>>>> Stashed changes
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/faq" element={<Faq />} />
         <Route path="/play" element={<PlaylistList/>} />
         <Route path="/playlists/:id" element={<PlaylistDetail/>} />
-        <Route path="/login" element={<Login/>} />
+        <Route path="/login" element={ <Login setOn = {setOn}/>} />
+        <Route path="/inicio/:id" element={<UserHome/>} />
        <Route path="/inscricao" element={<Cadastro />} />
-       <Route path="/perfil" element={<Initio />} />
       </Routes>
     <Rodape />
     </div>
