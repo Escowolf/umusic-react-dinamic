@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import './PlayUser.css';
+import BotaoCreate from './BotaoCreate';
 
 function PlayUser(){
     
@@ -16,7 +17,7 @@ function PlayUser(){
     return(
       <li>
         <Link to={`/playlists/${playDados.id}`}>
-            <img className="item" src={playDados.capa} alt="Capa do álbum"/>
+            <img className="itemNew" src={playDados.capa} alt="Capa do álbum"/>
         </Link>
       </li>
     )
@@ -26,6 +27,7 @@ function PlayUser(){
       <>
         <h1>Playlists</h1>
         <ul className="conteudo">
+          
           {res}
           </ul>
           </>

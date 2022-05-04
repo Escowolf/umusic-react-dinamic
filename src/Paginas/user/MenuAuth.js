@@ -18,7 +18,7 @@ function MenuAuth() {
         </button>
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div className="navbar-nav">
-            <Link to="/initio" className="nav-item nav-link text-light active">Início</Link>
+            <Link to="/inicio/:id" className="nav-item nav-link text-light active">Início</Link>
             <Link to="/" className="nav-item nav-link text-light active">Perfil</Link>
             <Link to="/play" className="nav-item nav-link text-light">Playlists</Link>
             <Link to="/faq" className="nav-item nav-link text-light">Faq</Link>
