@@ -1,13 +1,16 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from '../img/logoUmus.png';
 import '../css/MenuAuth.css';
 
-function logout(){
-  localStorage.removeItem("usuarioLogado");
-}
 
 function MenuAuth() {
-  
+  const navigate = useNavigate();
+    
+  function logout({setLogin}){
+    localStorage.removeItem("usuarioLogado");
+    navigate("/");
+    setLogin(JSON.parse(localStorage.getItem(undefined)))
+}
   return (<>
     <header>
       <nav className="navbar navbar-expand-lg fixed-top">
@@ -22,7 +25,7 @@ function MenuAuth() {
         </button>
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div className="navbar-nav">
-            <Link to="/inicio/:id" className="nav-item nav-link text-light active">Início</Link>
+            <Link to="/home" className="nav-item nav-link text-light active">Início</Link>
             <Link to="/" className="nav-item nav-link text-light active">Perfil</Link>
             <Link to="/play" className="nav-item nav-link text-light">Playlists</Link>
             <Link to="/faq" className="nav-item nav-link text-light">Faq</Link>

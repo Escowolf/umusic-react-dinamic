@@ -1,48 +1,93 @@
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import ListItem from './Lista/ListItem';
+import { Container } from 'react-bootstrap';
+import styled from 'styled-components';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
-{/*Música deve percorrer o JSON de músicas, então o usuário deve buscar a música e capa deve enviar uma capa para a pasta img */}
 
-function PlayUser(){
-{/* 
+const ListContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  background-color: #ccc;
+  padding: 10px;
+`;
 
-const [nome, setNome] = useState([]);
-const [capa, setCapa] = useState([]);
-const [musica, setMusica] = useState([]);
+function NewPlaylist() {
+  const [musicas, setMusicas] = useState([]);
 
-function handleSubmit(e){
-  e.preventDefault();
-    axios.post('http://localhost:4000/playlists', {
-      nome, capa, musica 
-    })
-    .then((res)=> (res.data))
-
-  alert("Usuário cadastrado com sucesso!");
-
-  cleanAll();
-}
-
-function cleanAll(){
-  setNome("");
-  setCapa("");
-  setMusicas("");
-}
-const res = playlists.map((playDados) => {
-  return(
-    <li>
-      <Link to={`/playlists/${playDados.id}`}>
-          <img className="item" src={playDados.capa} alt="Capa do álbum"/>
-      </Link>
-    </li>
-  )
-})*/}
+  useEffect(() => {
+    axios.get("http://localhost:4000/musicas")
+            .then((resp) => {
+                setMusicas(resp.data)
+                setLista(resp.data)
+            });
+  }, [])
 
   return (
-    <>
-      <h1>Playlists</h1>
-    
-        </>
-  )
-  }
+    <Container>
+     <ListContainer>
+      {musicas.map(musicas => {
+        return (
+          <ListItem
+            key={book.url}
+            title={book.title}
+            image={book.image}
+            arquivo={book.url}
+          />
+        )
+      })}
+      </ListContainer>
+    </Container>
+  );
+}
 
-export default PlayUser;
+function NewPlaylist(){
+  const usuario = JSON.parse(localStorage.getItem('usuarioLogado'));
+    const [musicas, setMusicas] = useState([]);
+    const [musicasSelecionadas, setMusicasSelecionadas] = useState([]);
+    const [buscar, setBuscar] = useState("");
+    const [lista, setLista] = useState([]);
+
+    function testaBusca(nomeMusica) {
+        const regex = new RegExp(buscar, 'i');
+        return regex.test(nomeMusica);
+    }
+
+    useEffect(() => {
+        const novaLista = musicas.filter(item => testaBusca(item.musicaNome))
+        setLista(novaLista);
+    }, [buscar])
+
+    useEffect(() => {
+      axios.get("http://localhost:4000/musicas")
+            .then((resp) => {
+                setMusicas(resp.data)
+                setLista(resp.data)
+            });
+  
+  }, [])
+        
+    return (
+        <div className="Playlist">
+           <Container>
+      <ListContainer>
+         <ListItem />
+         <ListItem />
+         <ListItem />
+      </ListContainer>
+    </Container>
+            <div className="criaPlaylist__buscar">
+              <input type='text' placeholder="Nome da playlist"/><br/>
+              <input type="file" />Upload
+                <input
+                    type="text"
+                    value={buscar}
+                    onChange={evento => setBuscar(evento.target.value)}
+                    placeholder="Buscar"
+                />
+            </div>
+           
+        </div>
+    )
+}
+
+export default NewPlaylist;

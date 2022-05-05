@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import FalseToken from '../../api/falseToken';
 import axios from 'axios';
 import './PlayUser.css';
-import BotaoCreate from './BotaoCreate';
 
 function PlayUser(){
-    
+  <FalseToken/>
   const [playlists, setPlaylists] = useState([]);
 
   useEffect(() => {
@@ -27,8 +27,8 @@ function PlayUser(){
       <>
       <div className='PlaylistsContent'>
         <h1>Playlists</h1>
+        <small className="text-muted"><Link to="/newplaylist"><h2 className='sub'>+ Nova Playlist</h2></Link></small>
         <ul className="conteudo">
-        <p>Nova playlist</p>
           {res}
           </ul>
       </div>

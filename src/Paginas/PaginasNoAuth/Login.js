@@ -1,73 +1,66 @@
-{/*import { Link, useNavigate } from "react-router-dom";
-import axios from "axios";
 import { useState } from "react";
+import axios from "axios";
+import '../css/Cadastro.css';
 import logo from '../img/logoUmus.png';
+import { Link, useNavigate } from "react-router-dom";
+
 import '../css/Login.css';
 
-function Login({setOn}) {
+function Login(){
 const navigate = useNavigate();
-const [nome, setNome] = useState();
-const [senha, setSenha] = useState();
+const [email, setEmail] = useState('');
+const [senha, setSenha] = useState('');
 
 
+function handleSubmit(e){
+e.preventDefault();
+/*Email utilizado como chave de busca de dados no JSON */
+    axios.get(`http://localhost:4000/usuarios?email=${email}`)
+    .then((res)=> {
+        /*Constante para manter os dados do usuário */
+    const usuario = res.data[0];
 
-function logar(e) {
-  e.preventDefault();
-  axios.get("http://localhost:4000/usuarios")
-    .then((resp) => {
-      let login = resp.data.find((p) => p.nome == nome && p.senha == senha);
-      if (login) {
-        localStorage.setItem('Logado', JSON.stringify(login.id));
-        setOn(JSON.parse(localStorage.getItem('Logado')));
-        navigate(`/inicio/${login.id}`, {state:{id:login.id}}, { replace: true })
-      }
+    if(usuario.senha!== senha){
+        alert("Dados inválidos!");
+        return
     }
-    );
+
+    localStorage.setItem('usuarioLogado',JSON.stringify(usuario));
+    navigate("/home");
+})
 }
 
+
 return (
-  <div className="container">
-  <main className="login">
-    <section className="formsBox">
-      <br/><br/><br/>
-      <form onSubmit={logar} className="forms">
-      <center> <img src={logo} className="d-inline-block align-top" height="70" alt="Logo site"></img>
-<br/><h1>Login</h1>
-</center><br/>
+    <>
+    <div className="container">
+        <div className="login">
+            <section className="formsBox">
+                <br/><br/><br/>
+            <form onSubmit={(e) => handleSubmit(e)}>
+                <center> 
+                    <img src={logo} className="d-inline-block align-top" height="70" alt="Logo site"></img><br/>
+                    <h1>Login</h1>
+                </center>
+                <br/><br /><br />
+        
+        <input className="form-control form-control-lg" id="email" value={email} type="email" onChange={(e) => setEmail(e.target.value)} placeholder="E-mail" required/><br />
+        <input className="form-control form-control-lg" id="password" type="password" value={senha} onChange={(e) => setSenha(e.target.value)} placeholder="Senha" required/><br />
 
-      <input className="form-control form-control-lg" 
-      id="nome" 
-      type="text" 
-      value={nome} 
-      onChange={(e) => setNome(e.target.value)} 
-      placeholder="Seu nome" 
-      required/><br />
-
-      <input className="form-control form-control-lg" 
-      id="password" 
-      type="password" 
-      value={senha} 
-      onChange={(e) => setSenha(e.target.value)} 
-      placeholder="Senha" 
-      required/><br />
-        <div className="login_formulario_enviar">
-          <input
-            className="btn btn-primary"
-            type="submit"
-            value="Continuar"
-          />
-          <br/>
-          <br/>
-          <p>
-          Não tem cadastro?&nbsp;&nbsp;
-          <Link to="/inscricao" className="Subscript">Inscreva-se!</Link>
+        <center>
+            <button type="submit" value="Enviar" className="btn btn-primary btn-lg btn-block">Enviar</button>
+        </center>  
+        <p>
+        Não tem cadastro?&nbsp;&nbsp;
+        <Link to="/inscricao" className="Subscript">Inscreva-se!</Link>
         </p>
+            </form>
+        </section>
         </div>
-      </form>
-    </section>
-  </main>
-  </div>
+    </div>
+    <br/><br/><br/>
+    </>
 );
 }
 
-export default Login;*/}
+export default Login;

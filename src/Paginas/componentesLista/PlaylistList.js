@@ -26,9 +26,11 @@ function PlaylistList() {
       <div className="container">
         <h1>Playlists</h1>
         <center><h2>O que vamos ouvir hoje?</h2></center>
+        
         <ul className="flex-container">
+        
           {res}
-          </ul>
+        </ul>
       </div>
       </div>
       )

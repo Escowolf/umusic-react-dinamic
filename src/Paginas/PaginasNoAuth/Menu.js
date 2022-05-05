@@ -19,7 +19,7 @@ function Menu() {
             <Link to="/" className="nav-item nav-link text-light active">Home</Link>
             <Link to="/faq" className="nav-item nav-link text-light">Faq</Link>
             <Link to="/inscricao" className="nav-item nav-link text-light">Inscrever</Link>
-            <Link to="/login-fin" className="nav-item nav-link text-light">Login</Link>
+            <Link to="/login" className="nav-item nav-link text-light">Login</Link>
           </div>
         </div>
       </nav>

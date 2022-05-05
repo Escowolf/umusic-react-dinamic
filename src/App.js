@@ -7,33 +7,30 @@ import Rodape from './Paginas/PaginasNoAuth/Rodape';
 import Cadastro from './Paginas/PaginasNoAuth/Cadastro';
 import PlaylistDetail from "./Paginas/componentesLista/PlaylistDetail";
 import PlaylistList from "./Paginas/componentesLista/PlaylistList";
+import NewPlaylist from "./Paginas/PaginasAuth/NewPlaylist";
 import Login from "./Paginas/PaginasNoAuth/Login";
-import UserHome from "./Paginas/user/UserHome";
 import { useState } from "react";
 import MenuAuth from "./Paginas/user/MenuAuth";
-import Profile from "./Paginas/PaginasAuth/Login2";
 import HomeAuth from "./Paginas/PaginasAuth/HomeAuth";
 
 function App() {
 
-  const Online = JSON.parse(localStorage.getItem('usuarioLogado'));
-  const [On, setOn] = useState(Online);
+  const usuario = JSON.parse(localStorage.getItem('usuarioLogado'));
+  const [login, setLogin] = useState(usuario);
 
   return (
     <div className="principal">
-        {!Online ? 
-      <Menu /> : 
-      <MenuAuth />
-    }
+      {/*useState verifica se há usuário logado, se não existir, abra Menu. Se existir, abra menuAuth */}
+        {!login ? (<Menu />) : (<MenuAuth /> ) }
+        
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/faq" element={<Faq />} />
         <Route path="/play" element={<PlaylistList/>} />
         <Route path="/playlists/:id" element={<PlaylistDetail/>} />
-        {/*<Route path="/login-fin" element={ <Login setOn = {setOn}/>} />*/}
-        <Route path="/inicio/:id" element={<UserHome/>} />
+        <Route path="/newplaylist" element={<NewPlaylist/>}/>
        <Route path="/inscricao" element={<Cadastro />} />
-       <Route path="/login" element={<Profile />} />
+       <Route path="/login" element={<Login />} />
        <Route path="/home" element={<HomeAuth />} />
 
       </Routes>
