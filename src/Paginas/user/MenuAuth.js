@@ -2,18 +2,16 @@ import { Link, useNavigate } from "react-router-dom";
 import logo from '../img/logoUmus.png';
 import '../css/MenuAuth.css';
 import UserExemple from '../img/User.jpg';
-import Menu from "../PaginasNoAuth/Menu";
 import { useState } from "react";
 
 
 function MenuAuth() {
   const navigate = useNavigate();
-  const [login,setLogin] = useState();
   const usuario = JSON.parse(localStorage.getItem('usuarioLogado'));
 
   function logout(){
-    setLogin(localStorage.removeItem("usuarioLogado"));
-    navigate("/");
+    localStorage.removeItem("usuarioLogado");
+    navigate('/');
 }
   return (<>
     <header>

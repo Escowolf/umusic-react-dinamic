@@ -1,22 +1,21 @@
 import React, { useState } from 'react';
 import UserExemple from '../img/User.jpg';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 function Profile(){
   const usuario = JSON.parse(localStorage.getItem('usuarioLogado'));
-  
+
     const [senha,setSenha] = useState(usuario.senha);
     const [data,setDataNascimento] = useState(usuario.senha);
     const [nome, setNome] = useState(usuario.nome);
     const [email, setEmail] = useState(usuario.email);
-   
-
-    
-
+  
     function handleSubmit(e){
+      e.preventDefault();
        axios.put(`http://localhost:4000/usuarios/${usuario.id}`,{nome,senha,email,data})
        .then(res => (res))
-        alert("Usuário alterado com sucesso!");
+       alert("Usuário alterado com sucesso!");
       }
 
     return(

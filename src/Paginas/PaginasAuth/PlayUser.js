@@ -17,7 +17,7 @@ function PlayUser(){
     return(
       <li>
         <Link to={`/playlists/${playDados.id}`}>
-            <img className="itemNew" src={playDados.capa} alt="Capa do álbum"/>
+            <img className="itemNew" id="dados" src={playDados.capa} alt="Capa do álbum"/>
         </Link>
       </li>
     )
@@ -27,7 +27,7 @@ function PlayUser(){
       <>
       <div className='PlaylistsContent'>
         <h1>Playlists</h1>
-        <small className="text-muted"><Link to="/newplaylist"><h2 className='sub'>+ Nova Playlist</h2></Link></small>
+        <small className="text-muted"><Link id="link" to="/newplaylist"><h2 className='sub'>+ Nova Playlist</h2></Link></small>
         <ul className="conteudo">
           {res}
           </ul>
