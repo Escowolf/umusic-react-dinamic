@@ -12,6 +12,7 @@ import Login from "./Paginas/PaginasNoAuth/Login";
 import { useState } from "react";
 import MenuAuth from "./Paginas/user/MenuAuth";
 import HomeAuth from "./Paginas/PaginasAuth/HomeAuth";
+import Profile from "./Paginas/user/Profile";
 
 function App() {
 
@@ -32,6 +33,7 @@ function App() {
        <Route path="/inscricao" element={<Cadastro />} />
        <Route path="/login" element={<Login />} />
        <Route path="/home" element={<HomeAuth />} />
+       <Route path="/perfil" element={<Profile />} />
 
       </Routes>
     <Rodape />

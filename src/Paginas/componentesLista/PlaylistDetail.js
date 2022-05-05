@@ -15,7 +15,6 @@ function PlaylistDetail() {
         });
   }, [])
 
-console.log(playlistSelecionada)
 const musicas = playlistSelecionada?.musicas.map((playDados)=>{
 return(
 

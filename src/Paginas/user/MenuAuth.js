@@ -1,11 +1,13 @@
 import { Link, useNavigate } from "react-router-dom";
 import logo from '../img/logoUmus.png';
 import '../css/MenuAuth.css';
+import UserExemple from '../img/User.jpg';
 
 
 function MenuAuth() {
   const navigate = useNavigate();
-    
+  const usuario = JSON.parse(localStorage.getItem('usuarioLogado'));
+
   function logout({setLogin}){
     localStorage.removeItem("usuarioLogado");
     navigate("/");
@@ -26,10 +28,20 @@ function MenuAuth() {
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div className="navbar-nav">
             <Link to="/home" className="nav-item nav-link text-light active">Início</Link>
-            <Link to="/" className="nav-item nav-link text-light active">Perfil</Link>
             <Link to="/play" className="nav-item nav-link text-light">Playlists</Link>
-            <Link to="/faq" className="nav-item nav-link text-light">Faq</Link>
-            <button className="nav-item nav-link text-light" onClick={logout}>Logout</button>
+            <div className="dropdown">
+      <a href="#" className="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+        <img src={UserExemple} alt="" className="rounded-circle me-2" width="32" height="32"/>
+        <strong>{usuario.nome}</strong>
+      </a>
+      <ul className="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+        <li><a className="dropdown-item" href="#">Nova Playlist</a></li>
+        <li><Link className="dropdown-item" to="/perfil">Perfil</Link></li>
+        <li><hr className="dropdown-divider"/></li>
+        <li><button className="dropdown-item" onClick={logout}>Logout</button></li>
+      </ul>
+    </div>&nbsp;&nbsp;&nbsp;&nbsp;
+            
           </div>
         </div>
       </nav>

@@ -13,7 +13,7 @@ function HomeAuth(){
         <div className="BoxPerfil">
         <div className="row">
           <div className="col-4">
-          <img src={UserExemple} className="perfil" alt="girl_example" />
+          <img src={UserExemple} className="perfil" alt="Machado_example" />
           </div>
           <div className="col-8">
           <h1 className="UserNome">{usuario.nome}</h1>
