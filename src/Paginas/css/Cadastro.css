@@ -8,7 +8,7 @@ background-size:contain;
 height: 100vh;
 }
 
-form{
+.formBox{
 padding:30px;
 border-radius: 30px;
 width: 50%;
