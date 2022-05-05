@@ -9,6 +9,7 @@ function Login(){
 const navigate = useNavigate();
 const [email, setEmail] = useState('');
 const [senha, setSenha] = useState('');
+const [login,setLogin] = useState();
 
 
 function handleSubmit(e){
@@ -24,7 +25,7 @@ e.preventDefault();
         return
     }
 
-    localStorage.setItem('usuarioLogado',JSON.stringify(usuario));
+    setLogin(localStorage.setItem('usuarioLogado',JSON.stringify(usuario)));
     navigate("/home");
 })
 }

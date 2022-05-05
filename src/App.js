@@ -18,11 +18,11 @@ function App() {
 
   const usuario = JSON.parse(localStorage.getItem('usuarioLogado'));
   const [login, setLogin] = useState(usuario);
-
+console.log(login);
   return (
     <div className="principal">
       {/*useState verifica se há usuário logado, se não existir, abra Menu. Se existir, abra menuAuth */}
-        {!login ? (<Menu />) : (<MenuAuth /> ) }
+        {!login? (<Menu />) : (<MenuAuth /> ) }
         
       <Routes>
         <Route path="/" element={<Home />} />
