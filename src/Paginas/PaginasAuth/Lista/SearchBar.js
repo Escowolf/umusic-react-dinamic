@@ -16,7 +16,7 @@ function SearchBar(props) {
  
 const navigate = useNavigate();
  
-function newBook() {
+function newMusic() {
     navigate('/musicas/new');
 }
  
@@ -25,7 +25,7 @@ function handleOnSubmit(event) {
     axios.get("http://localhost:4000/musicas").then((resp) => {
         setMusicas(resp.data);
       });
-    const results = musicas.filter(book => book.title.toLowerCase().indexOf(search) !== -1);
+    const results = musicas.filter(m => m.nome.toLowerCase().indexOf(search) !== -1);
     props.setMusicas(results);
 }
  
@@ -53,14 +53,14 @@ function handleSearchChange(event) {
                     <Col className="col-xl-2">
                         <Form.Group controlId="order">
                             <Form.Control as="select">
-                                <option>Newest</option>
-                                <option>Oldest</option>
+                                <option>Mais nova</option>
+                                <option>Mais antiga</option>
                             </Form.Control>
                         </Form.Group>
                     </Col>
                     <Col>
-                        <Button variant="primary" className="float-right" onClick={newBook}>
-                            New Book
+                        <Button variant="primary" className="float-right" onClick={newMusic}>
+                            New Music
                             </Button>
                     </Col>
                 </Form.Row>
