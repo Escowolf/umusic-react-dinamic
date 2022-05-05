@@ -7,9 +7,10 @@ import SearchBar from "./Lista/SearchBar";
 
 const ListContainer = styled.div`
   display: flex;
-  flex-direction: row;
-  background-color: #ccc;
-  padding: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: black;
+  padding-top: 3%;
 `;
 
 function NewPlaylist() {
@@ -27,14 +28,14 @@ function NewPlaylist() {
   return (
     <div className="Playlist">
       <Container>
-      <SearchBar />
+      <h1>Busque suas musicas</h1>
         <ListContainer>
           {musicas.map((m) => {
             return (
               <ListItem
                 nome={m.nome}
                 image={m.image}
-                artista={m.autor}
+                artista={m.cantor}
                 arquivo={m.arquivo}
               />
             );
