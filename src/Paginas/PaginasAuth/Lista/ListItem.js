@@ -1,10 +1,11 @@
 import styledComponents from "styled-components";
+import ReactAudioPlayer from 'react-audio-player';
 
 const ItemContainer = styledComponents.div`
     border-radius: 4px;
     background-color: #fff;
-    height: 120px;
-    width: 262px;
+    height: 150px;
+    width: 350px;
     color: #29303b;
     text-align: center;
     margin-bottom: 10px;
@@ -32,19 +33,26 @@ const CantorPane = styledComponents.div`
     color:black;
 `;
 
-const ItemLink = styledComponents.a`
+const Item = styledComponents.div`
     text-decoration: none;
 `;
 
 function ListItem(props) {
     return (
-        <ItemLink src={props.arquivo} title="Clique para ouvir">
+        <Item>
             <ItemContainer>
                 <Thumbnail src="https://yt3.ggpht.com/j6Vfqm3apIVLjbVO49o8LA0kPOluPkZiAgYWQo11CTCJSuqrRB7R_PS7ZlwgA6X9Cp9A8xM4gw=s900-c-k-c0x00ffffff-no-rj" />
                 <TitlePane>{props.nome}</TitlePane>
+                <div className="audio">
+                <ReactAudioPlayer
+                 src={props.arquivo}
+                 controls
+                 autoplay
+                 />
+                 </div>
                 <CantorPane>{props.cantor}</CantorPane>
             </ItemContainer>
-        </ItemLink>
+        </Item>
     );
   }
   
