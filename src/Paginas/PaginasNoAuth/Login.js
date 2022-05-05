@@ -1,6 +1,5 @@
 import { useState } from "react";
 import axios from "axios";
-import '../css/Cadastro.css';
 import logo from '../img/logoUmus.png';
 import { Link, useNavigate } from "react-router-dom";
 
@@ -34,8 +33,8 @@ e.preventDefault();
 return (
     <>
     <div className="container">
-        <div className="login">
-            <section className="formsBox">
+        <div className="forms">
+            <section className="login">
                 <br/><br/><br/>
             <form onSubmit={(e) => handleSubmit(e)}>
                 <center> 
