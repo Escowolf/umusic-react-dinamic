@@ -3,6 +3,8 @@
 Aplicação web que simula o funcionamento do Spotify.
 Funcionalidades: realiza cadastro de usuários, toca músicas, exibe playlists de forma dinâmica. <br>Tecnologias utilizadas no front: **CSS, HTML, JavaScript, React e Boostrap**;
 
+`COMPLEMENTAR PLAYLIST, UTILIZAR O AUTHPROVIDER E API`
+
 Para inicializar o projeto em sua máquina, localmente, é necessário primeiro realizar o download e acessar a pasta através do terminal, começando com o comando `npm install` no diretório raiz do projeto.
 
 # Getting Started with Create React App
