@@ -15,7 +15,7 @@ import HomeAuth from "./Paginas/PaginasAuth/HomeAuth";
 import Profile from "./Paginas/user/Profile";
 
 function App() {
-
+  const MONGO_URL = "mongodb+srv://admin:<PPtkOKzu7YmpUvMb>@cluster0.ucyz0.mongodb.net/?retryWrites=true&w=majority";
   const usuario = JSON.parse(localStorage.getItem('usuarioLogado'));
   const [login, setLogin] = useState(usuario);
 console.log(login);
