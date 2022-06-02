@@ -1,15 +1,17 @@
-.Home{
-    padding-top:3%;
-}
-
-.text{
-    background-color:rgba(93,26,74,1);
+.Home {
+    padding-top: 3%;
+  }
+  
+  .text {
+    background-color: rgba(93, 26, 74, 1);
     padding: 50px;
     text-align: center;
-    font-size: 300%;
+    font-size: 2.4em;
     border-radius: 30px;
-}
-
-.img-fluid{
-    border-radius: 50px;
-}
+  }
+  
+  .img-fluid {
+    border-radius: 30px;
+    min-width: 250px;
+  }
+  

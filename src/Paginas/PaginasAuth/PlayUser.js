@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import FalseToken from '../../api/falseToken';
 import axios from 'axios';
-import '../css/PlaylistList.css';
+import './PlayUser.css';
 
-function PlaylistList() {
+function PlayUser(){
+  <FalseToken/>
   const [playlists, setPlaylists] = useState([]);
 
   useEffect(() => {
@@ -15,25 +17,23 @@ function PlaylistList() {
     return(
       <li>
         <Link to={`/playlists/${playDados.id}`}>
-            <img className="item" src={playDados.capa} alt="Capa do álbum"/>
+            <img className="itemNew" id="dados" src={playDados.capa} alt="Capa do álbum"/>
         </Link>
       </li>
     )
   })
 
     return (
-      <div className="background">
-      <div className="container">
+      <>
+      <div className='PlaylistsContent'>
         <h1>Playlists</h1>
-        <center><h2>O que vamos ouvir hoje?</h2></center>
-        
-        <ul className="flex-container">
-        
+        <small className="text-muted"><Link id="link" to="/newplaylist"><h2 className='sub'>+ Nova Playlist</h2></Link></small>
+        <ul className="conteudo">
           {res}
-        </ul>
+          </ul>
       </div>
-      </div>
-      )
+          </>
+    )
 }
 
-export default PlaylistList;
+export default PlayUser;

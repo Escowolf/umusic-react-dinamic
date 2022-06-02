@@ -1,6 +1,6 @@
 import { useState } from "react";
-import usuario from "./users/userMock";
-import './css/Cadastro.css'
+import axios from "axios";
+import '../css/Cadastro.css'
 
 export function Cadastro() {
   const [email, setEmail] = useState("");
@@ -13,10 +13,17 @@ export function Cadastro() {
   function handleSubmit(e){
     e.preventDefault();
 
-    usuario.push({nome , senha, email, data});
-    alert("Usuário cadastrado com sucesso!");
-    console.log(usuario);
+      axios.post('http://localhost:4000/usuarios', {
+        email, senha, data, nome 
+      })
+      .then((res)=> (res.data))
 
+    alert("Usuário cadastrado com sucesso!");
+
+    cleanAll();
+  }
+
+  function cleanAll(){
     setNome("");
     setEmail("");
     setEmailVerify("");
@@ -40,7 +47,7 @@ export function Cadastro() {
         <br /><br />
           <h1>Increva-se</h1>
           <br /><br />
-          <form onSubmit={(e) => handleSubmit(e)}>
+          <form className="formBox" onSubmit={(e) => handleSubmit(e)}>
             <input className="form-control form-control-lg" id="email" value={email} type="email" onChange={(e) => setEmail(e.target.value)} placeholder="E-mail" required/><br />
             <input className="form-control form-control-lg" id="emailVerify"  value={emailVerify} type="email" onBlur={comparaEmail} onChange={(e) => setEmailVerify(e.target.value)} placeholder="Confirmar e-mail" required/><br />
             <input className="form-control form-control-lg" id="password" type="password" value={senha} onChange={(e) => setSenha(e.target.value)} placeholder="Senha" required/><br />
@@ -64,7 +71,7 @@ export function Cadastro() {
 
           <center><button type="submit" value="Enviar" className="btn btn-primary btn-lg btn-block">Enviar</button></center>  
           </form>
-        </div><br/>
+        </div><br/><br/><br/>
       </div>
     
   );
