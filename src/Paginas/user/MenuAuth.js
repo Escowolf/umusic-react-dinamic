@@ -12,7 +12,8 @@ function MenuAuth() {
   function logout(){
     localStorage.removeItem("usuarioLogado");
     navigate('/');
-}
+  }
+  
   return (<>
     <header>
       <nav className="navbar navbar-expand-lg fixed-top">

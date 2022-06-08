@@ -14,7 +14,7 @@ function PlaylistList() {
   const res = playlists.map((playDados) => {
     return(
       <li>
-        <Link to={`/playlists/${playDados.id}`}>
+        <Link to={`/playlists/${playDados._id}`}>
             <img className="item" src={playDados.capa} alt="Capa do álbum"/>
         </Link>
       </li>

@@ -5,10 +5,10 @@ import '../css/PlaylistDetail.css'
 
 function PlaylistDetail() {
   const [playlistSelecionada, setPlaylistSelecionada] = useState({musicas: []});
-  const { id } = useParams();
+  const { _id } = useParams();
 
   useEffect(() => {
-    axios.get(`http://localhost:4000/playlists/${id}`)
+    axios.get(`http://localhost:4000/playlists/${_id}`)
         .then((res) => {
           console.log(res.data)
           setPlaylistSelecionada(res.data)
