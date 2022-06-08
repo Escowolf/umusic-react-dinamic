@@ -35,7 +35,7 @@ function MenuAuth() {
         <strong>{usuario.nome}</strong>
       </a>
       <ul className="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
-        <li><a className="dropdown-item" href="#">Nova Playlist</a></li>
+        <li><Link className="dropdown-item" id="link" to="/newplaylist">Nova Playlist</Link></li>
         <li><Link className="dropdown-item" to="/perfil">Perfil</Link></li>
         <li><hr className="dropdown-divider"/></li>
         <li><button className="dropdown-item" onClick={logout}>Logout</button></li>
