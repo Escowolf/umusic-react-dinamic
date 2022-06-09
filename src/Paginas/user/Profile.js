@@ -13,7 +13,7 @@ function Profile(){
   
     function handleSubmit(e){
       e.preventDefault();
-       axios.put(`http://localhost:4000/usuarios/${usuario._id}`,{nome,senha,email,data})
+       axios.put(`http://localhost:4000/usuarios/${usuario._id}`,{ nome,senha,email,data })
        .then(res => (res))
        alert("Usuário alterado com sucesso!");
       }
